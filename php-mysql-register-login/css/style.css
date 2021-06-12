@@ -1,0 +1,322 @@
+/* style.css */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+}
+
+th a:link, th a:visited, th a:hover, th a:active {
+    color: #ffffff;
+}
+
+#login, #logout {
+    /* set initial display to none */
+    display: none;
+}
+
+#showPassword {
+    text-decoration: underline;
+    color: seashell;
+}
+
+#showPassword:hover {
+    cursor: pointer;
+    color: seashell;
+}
+
+/* Login/signup */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import "bourbon";
+@import "neat";
+*, *:before, *:after {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-family: "Calibre", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #444;
+}
+
+.body {
+    position: relative;
+    /* flex-direction: row-reverse; */
+    /* align-items: center;
+    justify-content: center; */
+    width: 100%;
+    height: 90vh;
+}
+
+button {
+    cursor: pointer;
+}
+
+button, input {
+    border: none;
+}
+
+.hide {
+    display: none;
+}
+
+.app {
+    position: relative;
+    display: block;
+    width: 23.4375rem;
+    height: 41.6875rem;
+    background-color: whitesmoke;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.app .login, .app .signup {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    background-color: #015871;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    transition: all 0.25s linear;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.app .login {
+    top: 0;
+    border-bottom: 1px solid white;
+}
+
+.app .login.active {
+    height: 10%;
+    border-bottom: none;
+    background-color: #174c5b;
+}
+
+.app .login.inactive {
+    height: 5%;
+    font-size: 1rem;
+    border-bottom: none;
+}
+
+.app .signup {
+    bottom: 0;
+    border-top: 1px solid white;
+}
+
+.app .signup.active {
+    height: 10%;
+    border-top: none;
+    background-color: #20002d;
+}
+
+.app .signup.inactive {
+    height: 5%;
+    font-size: 1rem;
+    background-color: #20002d;
+    border-top: none;
+}
+
+.app .login-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 60px 30px 50px;
+    background-color: #015871;
+    animation: slideUp 0.25s linear;
+    z-index: 0;
+}
+
+.app .login-form h2 {
+    font-size: 1.85rem;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+.app .login-form input {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 0 0.5rem;
+    padding: 0.875rem 0.5rem;
+    border-radius: 5px;
+}
+
+.app .login-form input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.app .login-form .button {
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.625rem 0.5rem;
+    background-color: #0295c0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 5px;
+}
+
+.app .login-form p {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+.app .signup-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 60px 30px 50px;
+    background-color: #510171;
+    animation: slideDown 0.25s linear;
+    z-index: 0;
+}
+
+.app .signup-form h2 {
+    font-size: 1.85rem;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.app .signup-form input {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 0 0.5rem;
+    padding: 0.875rem 0.5rem;
+    border-radius: 5px;
+}
+
+.app .signup-form input.half {
+    width: 49%;
+    display: inline-block;
+    float: left;
+}
+
+.app .signup-form input.half:nth-of-type(1) {
+    margin-right: 2%;
+}
+
+.app .signup-form input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.app .signup-form .button {
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.625rem 0.5rem;
+    background-color: #ba13fd;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 5px;
+}
+
+.app .signup-form p {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.greet {
+    text-align: center;
+    font-size: 30px;
+    color: forestgreen;
+}
+
+.wrong {
+    text-align: center;
+    font-size: 30px;
+    color: red;
+}
+
+/* waves ----------------  */
+
+.okwork {
+    background: radial-gradient(ellipse at center, rgba(255, 254, 234, 1) 0%, rgba(255, 254, 234, 1) 35%, #b7e8eb 100%);
+    overflow: hidden;
+}
+
+.ocean {
+    height: 5%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #015871;
+}
+
+.wave {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+}
+
+@keyframes wave {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -1600px;
+    }
+}
+
+@keyframes swell {
+    0%, 100% {
+        transform: translate3d(0, -25px, 0);
+    }
+    50% {
+        transform: translate3d(0, 5px, 0);
+    }
+}
